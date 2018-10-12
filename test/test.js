@@ -7,6 +7,24 @@ import Adapter from 'enzyme-adapter-react-16'
 
 configure({adapter: new Adapter()});
 
+const json = {
+    name: 'John Doe',
+    age: 20,
+    admin: true,
+    member: null,
+    permissions: ['read', 'write', 'edit'],
+    deep: [
+        {
+            a: {
+                b: {
+                    c: null,
+                    d: ['e', 'f', [1, null]],
+                },
+            },
+        },
+    ],
+};
+
 describe('JSONPretty', function () {
     it('should create component with pre as first tag', function () {
         const wrapper = shallow(<JSONPretty/>);
@@ -24,5 +42,11 @@ describe('JSONPretty', function () {
 
         wrapper.setProps({padding: 4});
         expect(wrapper.props().padding).to.equal(4);
+    });
+
+    it('should correctly render a complex json', function () {
+        const wrapper = mount(<JSONPretty json={json}/>);
+
+        expect(wrapper.props().json).to.equal(json);
     });
 });
