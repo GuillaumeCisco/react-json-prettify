@@ -1,10 +1,28 @@
-var expect = require('chai').expect;
-var JSONPretty = require('../index');
+import React from 'react';
+import 'jsdom-global/register';
+import {configure, shallow, render, mount} from 'enzyme';
+import {expect} from 'chai';
+import JSONPretty from '../src';
+import Adapter from 'enzyme-adapter-react-16'
 
-describe('JSONPretty', function() {
-    it('should create component with json', function() {
-        var C = JSONPretty({json: {name: 'toto'}});
+configure({adapter: new Adapter()});
 
-        expect('1').to.equal('1');
+describe('JSONPretty', function () {
+    it('should create component with pre as first tag', function () {
+        const wrapper = shallow(<JSONPretty/>);
+        expect(wrapper.find('pre')).to.have.length(1);
+    });
+
+    it('should have a default padding to 2', function () {
+        const wrapper = mount(<JSONPretty/>);
+
+        expect(wrapper.props().padding).to.equal(2);
+    });
+
+    it('should have a padding to 4', function () {
+        const wrapper = mount(<JSONPretty/>);
+
+        wrapper.setProps({padding: 4});
+        expect(wrapper.props().padding).to.equal(4);
     });
 });

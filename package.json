@@ -2,10 +2,10 @@
   "name": "react-json-prettify",
   "version": "0.1.0",
   "description": "Simple and Lightweight React Component for displaying Json",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "mocha --reporter spec",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --require @babel/register -R spec test/*",
+    "build": "babel ./src --noInterop --ignore=*.spec.js --out-dir ./dist"
   },
   "repository": {
     "type": "git",
@@ -21,9 +21,29 @@
     "node": ">=4.2.4"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-jest": "^23.6.0",
     "chai": "^4.2.0",
+    "coffeescript": "^2.3.2",
     "coveralls": "^3.0.2",
-    "istanbul": "^0.4.5",
-    "mocha": "^5.2.0"
+    "cross-env": "^5.2.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "istanbul": "^1.0.0-alpha.2",
+    "jest": "^23.6.0",
+    "jsdom": "12.2.0",
+    "jsdom-global": "3.0.2",
+    "mocha": "^5.2.0",
+    "react-dom": "^16.5.2",
+    "sinon": "^6.3.5"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2"
   }
 }
