@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/GuillaumeCisco/react-json-prettify.svg?branch=master)](https://travis-ci.org/GuillaumeCisco/react-json-prettify)
+[![Coverage Status](https://coveralls.io/repos/github/GuillaumeCisco/react-json-prettify/badge.svg?branch=master)](https://coveralls.io/github/GuillaumeCisco/react-json-prettify?branch=master)
+
 React Json Prettify
 =========
 
