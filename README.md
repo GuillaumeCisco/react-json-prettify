@@ -6,7 +6,8 @@ React Json Prettify
 
 Simple and Lightweight React Component for displaying Json.
 
-The only dependencies are `react` and `prop-types` (last is excluded once built).
+The only dependencies are `react` and `prop-types` (last is excluded once built).  
+There is no css to load.
 
 ## Installation
 
@@ -77,10 +78,10 @@ return <JSONPretty json={json} theme={github} padding={4} />
 
   ![](assets/demo2.png)
 
-Modifying the padding will modify the numbe of spaces to indent.
+Modifying the padding will modify the number of spaces to indent.
 
-Regarding themes, this modules come with 81 themes.  
-For the main part, they come from [highlightjs](https://highlightjs.org/static/demo/)  
+Regarding themes, this modules come with predefined 81 themes.  
+For the main part, they come from [highlightjs](https://highlightjs.org/static/demo/).  
 Do not hesitate to play with them.
 
 Overriding a theme to your needs is very easy. And you can control most of the part of the render.  
@@ -126,7 +127,7 @@ Simply use basic css color values.
 
 ## Tests
 
-  `npm test`
+  `npm cover`
 
 ## Contributing
 

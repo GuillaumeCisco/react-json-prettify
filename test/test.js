@@ -1,6 +1,6 @@
 import React from 'react';
 import 'jsdom-global/register';
-import {configure, shallow, render, mount} from 'enzyme';
+import {configure, shallow, mount} from 'enzyme';
 import {expect} from 'chai';
 import JSONPretty from '../src';
 import Adapter from 'enzyme-adapter-react-16'
