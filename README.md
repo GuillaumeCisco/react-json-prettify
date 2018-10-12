@@ -4,7 +4,9 @@
 React Json Prettify
 =========
 
-Simple and Lightweight React Component for displaying Json
+Simple and Lightweight React Component for displaying Json.
+
+The only dependencies are `react` and `prop-types` (last is excluded once built).
 
 ## Installation
 
@@ -85,7 +87,7 @@ Overriding a theme to your needs is very easy. And you can control most of the p
 For example:
 
 ```javascript
-import {atomOneLight} from 'react-json-prettify/themes';
+import {atomOneLight} from 'react-json-prettify/dist/themes';
 
 const customTheme = {
     ...atomOneLight,
