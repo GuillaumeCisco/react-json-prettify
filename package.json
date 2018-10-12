@@ -1,0 +1,26 @@
+{
+  "name": "react-json-prettify",
+  "version": "0.1.0",
+  "description": "Simple and Lightweight React Component for displaying Json",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GuillaumeCisco/react-json-prettify.git"
+  },
+  "author": "Guillaume Cisco <guillaumecisco@gmail.com> (https://guillaumecisco.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GuillaumeCisco/react-json-prettify/issues"
+  },
+  "homepage": "https://github.com/GuillaumeCisco/react-json-prettify#readme",
+  "engines": {
+    "node": ">=4.2.4"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
