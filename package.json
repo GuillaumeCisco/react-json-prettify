@@ -2,9 +2,19 @@
   "name": "react-json-prettify",
   "version": "0.1.3",
   "description": "Simple and Lightweight React Component for displaying Json",
-  "keywords": ["react", "json", "pretty", "prettify", "nice", "beautiful", "awesome"],
+  "keywords": [
+    "react",
+    "json",
+    "pretty",
+    "prettify",
+    "nice",
+    "beautiful",
+    "awesome"
+  ],
   "main": "dist/index.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --require @babel/register -R spec test/*",
     "build": "babel ./src --noInterop --ignore=*.spec.js --out-dir ./dist"
