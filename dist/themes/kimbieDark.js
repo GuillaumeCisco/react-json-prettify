@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 var _default = {
   background: 'rgb(34, 26, 15)',
   brace: 'rgb(211, 175, 134)',
@@ -14,10 +14,10 @@ var _default = {
   key: 'rgb(211, 175, 134)',
   value: {
     string: 'rgb(136, 155, 74)',
-    null: 'rgb(247, 154, 50)',
+    "null": 'rgb(247, 154, 50)',
     number: 'rgb(247, 154, 50)',
-    boolean: 'rgb(247, 154, 50)'
+    "boolean": 'rgb(247, 154, 50)'
   },
   bracket: 'rgb(211, 175, 134)'
 };
-exports.default = _default;
+exports["default"] = _default;

@@ -139,7 +139,10 @@ JSONPretty.defaultProps = {
 };
 
 JSONPretty.propTypes = {
-    json: PropTypes.shape({}),
+    json: PropTypes.oneOfType([
+        PropTypes.shape({}),
+        PropTypes.arrayOf(PropTypes.any)
+    ]),
     theme: PropTypes.shape({}),
     padding: PropTypes.number,
 };
