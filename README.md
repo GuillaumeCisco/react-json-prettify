@@ -80,7 +80,7 @@ return <JSONPretty json={json} theme={github} padding={4} />
 
 Modifying the padding will modify the number of spaces to indent.
 
-Regarding themes, this modules come with predefined 81 themes.  
+Regarding themes, this modules come with 81 predefined themes.  
 For the main part, they come from [highlightjs](https://highlightjs.org/static/demo/).  
 Do not hesitate to play with them.
 
@@ -123,11 +123,24 @@ export default {
 ```
 
 Themes only support colors for now.  
-Simply use basic css color values. 
+Simply use basic css color values.  
+You can use conditional function on your json values too:
+ 
+ ```javascript
+ import {atomOneLight} from 'react-json-prettify/dist/themes';
+
+const customTheme = {
+    ...atomOneLight,
+    value: {
+        ...atomOneLight.value,
+        string: (value) => value === 'foo' ? 'red': 'green',
+    },
+};
+ ```
 
 ## Tests
 
-  `npm cover`
+`npm cover`
 
 ## Contributing
 

@@ -7,15 +7,18 @@ const RecursiveKeyValue = ({parent, value, theme, padding, deep}) => {
     // easy types
     if (value === null) {
         return (
-            <span style={{color: theme.value.null}}>
+            <span style={{color: typeof theme.null === 'function' ?
+                    theme.value.null(value) : theme.value.null}}>
                 null
             </span>);
     }
     if (typeof value === 'string') {
         return (
-            <span style={{color: theme.valueQuotes}}>
+            <span style={{color: typeof theme.valueQuotes === 'function' ?
+                    theme.valueQuotes(value): theme.valueQuotes}}>
                 "
-                <span style={{color: theme.value.string}}>
+                <span style={{color: typeof theme.value.string === 'function' ?
+                        theme.value.string(value) : theme.value.string}}>
                     {value}
                 </span>
                 "
@@ -23,13 +26,15 @@ const RecursiveKeyValue = ({parent, value, theme, padding, deep}) => {
     }
     if (typeof value === 'number') {
         return (
-            <span style={{color: theme.value.number}}>
+            <span style={{color: typeof theme.value.number === 'function' ?
+                    theme.value.number(value) : theme.value.number}}>
                 {value}
             </span>);
     }
     if (typeof value === 'boolean') {
         return (
-            <span style={{color: theme.value.boolean}}>
+            <span style={{color: typeof theme.value.boolean === 'function' ?
+                    theme.value.boolean(value) : theme.value.boolean}}>
                 {value ? 'true' : 'false'}
             </span>);
     }

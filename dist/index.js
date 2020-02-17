@@ -30,7 +30,7 @@ var RecursiveKeyValue = function RecursiveKeyValue(_ref) {
   if (value === null) {
     return _react["default"].createElement("span", {
       style: {
-        color: theme.value["null"]
+        color: typeof theme["null"] === 'function' ? theme.value["null"](value) : theme.value["null"]
       }
     }, "null");
   }
@@ -38,11 +38,11 @@ var RecursiveKeyValue = function RecursiveKeyValue(_ref) {
   if (typeof value === 'string') {
     return _react["default"].createElement("span", {
       style: {
-        color: theme.valueQuotes
+        color: typeof theme.valueQuotes === 'function' ? theme.valueQuotes(value) : theme.valueQuotes
       }
     }, "\"", _react["default"].createElement("span", {
       style: {
-        color: theme.value.string
+        color: typeof theme.value.string === 'function' ? theme.value.string(value) : theme.value.string
       }
     }, value), "\"");
   }
@@ -50,7 +50,7 @@ var RecursiveKeyValue = function RecursiveKeyValue(_ref) {
   if (typeof value === 'number') {
     return _react["default"].createElement("span", {
       style: {
-        color: theme.value.number
+        color: typeof theme.value.number === 'function' ? theme.value.number(value) : theme.value.number
       }
     }, value);
   }
@@ -58,7 +58,7 @@ var RecursiveKeyValue = function RecursiveKeyValue(_ref) {
   if (typeof value === 'boolean') {
     return _react["default"].createElement("span", {
       style: {
-        color: theme.value["boolean"]
+        color: typeof theme.value["boolean"] === 'function' ? theme.value["boolean"](value) : theme.value["boolean"]
       }
     }, value ? 'true' : 'false');
   } // complex nested
