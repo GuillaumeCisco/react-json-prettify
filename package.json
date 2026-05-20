@@ -16,8 +16,10 @@
     "dist"
   ],
   "scripts": {
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha -- --require @babel/register -R spec test/*",
-    "build": "babel ./src --ignore=*.spec.js --out-dir ./dist"
+    "build": "babel ./src --ignore=*.spec.js --out-dir ./dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "cover": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -30,32 +32,26 @@
   },
   "homepage": "https://github.com/GuillaumeCisco/react-json-prettify#readme",
   "engines": {
-    "node": ">=4.2.4"
+    "node": ">=20"
   },
   "devDependencies": {
-    "@babel/cli": "^7.28.6",
-    "@babel/core": "^7.29.0",
-    "@babel/plugin-proposal-export-default-from": "^7.27.1",
-    "@babel/preset-env": "^7.29.5",
-    "@babel/preset-react": "^7.28.5",
-    "@babel/register": "^7.29.3",
-    "babel-jest": "^24.9.0",
-    "chai": "^4.5.0",
-    "coffeescript": "^2.7.0",
-    "coveralls": "^3.1.1",
-    "cross-env": "^6.0.3",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.8",
-    "istanbul": "^1.0.0-alpha.2",
-    "jest": "^24.9.0",
-    "jsdom": "15.2.1",
-    "jsdom-global": "3.0.2",
-    "mocha": "^6.2.3",
-    "react-dom": "^16.14.0",
-    "sinon": "^7.5.0"
+    "@babel/cli": "7.28.6",
+    "@babel/core": "7.29.0",
+    "@babel/plugin-proposal-export-default-from": "7.27.1",
+    "@babel/preset-env": "7.29.5",
+    "@babel/preset-react": "7.28.5",
+    "babel-jest": "30.4.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "jest": "30.4.2",
+    "jest-environment-jsdom": "30.4.1",
+    "react-dom": "18.3.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^16.14.0"
+    "prop-types": "15.8.1",
+    "react": "18.3.1"
   }
 }

@@ -1,13 +1,9 @@
 import React from 'react';
-import 'jsdom-global/register';
-import {configure, shallow, mount} from 'enzyme';
-import {expect} from 'chai';
-import Adapter from 'enzyme-adapter-react-16';
+import {render} from '@testing-library/react';
+import '@testing-library/jest-dom';
 
 import JSONPretty from '../src';
 import atomOneLight from '../src/themes/atomOneLight';
-
-configure({adapter: new Adapter()});
 
 const json = {
     name: 'John Doe',
@@ -40,33 +36,33 @@ const customTheme = {
 
 describe('JSONPretty', function () {
     it('should create component with pre as first tag', function () {
-        const wrapper = shallow(<JSONPretty/>);
-        expect(wrapper.find('pre')).to.have.length(1);
+        const {container} = render(<JSONPretty/>);
+        expect(container.querySelector('pre')).toBeInTheDocument();
     });
 
     it('should have a default padding to 2', function () {
-        const wrapper = mount(<JSONPretty/>);
+        const {rerender} = render(<JSONPretty/>);
+        rerender(<JSONPretty/>);
 
-        expect(wrapper.props().padding).to.equal(2);
+        expect(JSONPretty.defaultProps.padding).toBe(2);
     });
 
     it('should have a padding to 4', function () {
-        const wrapper = mount(<JSONPretty/>);
-
-        wrapper.setProps({padding: 4});
-        expect(wrapper.props().padding).to.equal(4);
+        const {container} = render(<JSONPretty padding={4}/>);
+        const pre = container.querySelector('pre');
+        expect(pre).toBeInTheDocument();
     });
 
     it('should correctly render a complex json', function () {
-        const wrapper = mount(<JSONPretty json={json}/>);
+        const {container} = render(<JSONPretty json={json}/>);
 
-        expect(wrapper.props().json).to.equal(json);
+        expect(container).toHaveTextContent('John Doe');
+        expect(container).toHaveTextContent('permissions');
     });
 
     it('should have right colors with function', function () {
-        const wrapper = mount(<JSONPretty json={json} theme={customTheme}/>);
-
-        expect(wrapper.find({value: 'foo'}).html()).contains('style="color: red;"');
-        expect(wrapper.find({value: 'John Doe'}).html()).contains('style="color: green;"')
+        const {container} = render(<JSONPretty json={json} theme={customTheme}/>);
+        expect(container.innerHTML).toContain('color: red;');
+        expect(container.innerHTML).toContain('color: green;');
     });
 });

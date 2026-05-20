@@ -140,7 +140,9 @@ const customTheme = {
 
 ## Tests
 
-`npm cover`
+`npm test`
+
+`npm run cover`
 
 ## Contributing
 
