@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/GuillaumeCisco/react-json-prettify.svg?branch=master)](https://travis-ci.org/GuillaumeCisco/react-json-prettify)
+[![CI](https://github.com/GuillaumeCisco/react-json-prettify/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/GuillaumeCisco/react-json-prettify/actions/workflows/ci.yml)
 [![Coverage Status](https://coveralls.io/repos/github/GuillaumeCisco/react-json-prettify/badge.svg?branch=master)](https://coveralls.io/github/GuillaumeCisco/react-json-prettify?branch=master)
 
 React Json Prettify
@@ -148,6 +148,6 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 ## TODO
 
-More css customization (background-color, background-url, font-weight).  
+More CSS customization (background-color, background-url, font-weight).  
 Styles of brackets and braces.  
 Inline options for arrays.

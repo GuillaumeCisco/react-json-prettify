@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
-var _default = {
+var _default = exports["default"] = {
   background: 'rgb(235, 248, 255)',
   brace: 'rgb(81, 109, 123)',
   keyQuotes: 'rgb(81, 109, 123)',
@@ -20,4 +20,3 @@ var _default = {
   },
   bracket: 'rgb(81, 109, 123)'
 };
-exports["default"] = _default;
